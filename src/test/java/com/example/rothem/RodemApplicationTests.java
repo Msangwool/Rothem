@@ -1,4 +1,4 @@
-package com.example.rodem;
+package com.example.rothem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
