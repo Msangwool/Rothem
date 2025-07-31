@@ -1,4 +1,4 @@
-package com.example.rothem.rothem_admin.entity;
+package org.haram.rothem.entity;
 
 import lombok.Builder;
 import lombok.Getter;
