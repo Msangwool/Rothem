@@ -1,6 +1,5 @@
 package org.haram.rothem.data.entity;
 
-import com.space.data.Auditable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

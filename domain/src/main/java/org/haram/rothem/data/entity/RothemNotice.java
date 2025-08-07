@@ -1,7 +1,5 @@
 package org.haram.rothem.data.entity;
 
-import com.space.data.Auditable;
-import com.space.data.entity.RothemNoticeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,7 @@ import lombok.Setter;
 @Table(name = "rt_notice")
 @NoArgsConstructor
 @Setter
-public class RothemNotice extends Auditable implements RothemNoticeEntity {
+public class RothemNotice extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

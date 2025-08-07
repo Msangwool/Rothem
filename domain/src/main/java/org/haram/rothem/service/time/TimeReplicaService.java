@@ -1,14 +1,12 @@
 package org.haram.rothem.service.time;
 
-import com.space.domain.rothem.entity.Time;
-import com.space.domain.rothem.entity.TimeStatusUniqueKey;
-import com.space.domain.rothem.entity.TimeUniqueKey;
-import com.space.domain.rothem.repository.dao.TimeDao;
-import com.space.domain.rothem.repository.dao.TimeStatusDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.data.entity.TimeStatusUniqueKey;
+import org.haram.rothem.data.entity.TimeUniqueKey;
+import org.haram.rothem.repository.dao.TimeDao;
+import org.haram.rothem.repository.dao.TimeStatusDao;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
