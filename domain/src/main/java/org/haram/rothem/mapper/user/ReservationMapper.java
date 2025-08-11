@@ -1,9 +1,9 @@
 package org.haram.rothem.mapper.user;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.user.request.ReservationRequest;
-import com.space.data.domain.rothem.user.response.ReservationResponse;
-import com.space.domain.rothem.entity.Reservation;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.user.request.ReservationRequest;
+import org.haram.rothem.data.dto.user.response.ReservationResponse;
+import org.haram.rothem.data.entity.Reservation;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

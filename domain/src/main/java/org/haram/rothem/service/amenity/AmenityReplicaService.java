@@ -1,9 +1,9 @@
 package org.haram.rothem.service.amenity;
 
-import com.space.domain.rothem.entity.Amenity;
-import com.space.domain.rothem.repository.dao.AmenityDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.Amenity;
+import org.haram.rothem.repository.dao.AmenityDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -35,7 +35,7 @@ public class AmenityReplicaService {
 
     public Amenity findById(Long amenitySeq) {
         return amenityDao.findById(amenitySeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Amenity 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_AMENITY));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Amenity 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_AMENITY));
     }
 
 }

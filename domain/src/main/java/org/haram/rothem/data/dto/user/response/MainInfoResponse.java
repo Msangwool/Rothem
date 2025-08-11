@@ -1,9 +1,9 @@
 package org.haram.rothem.data.dto.user.response;
 
-import com.space.data.domain.notice.space.NoticeResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.haram.rothem.data.dto.notice.NoticeResponse;
 
 import java.util.List;
 

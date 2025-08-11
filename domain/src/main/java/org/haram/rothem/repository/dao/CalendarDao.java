@@ -2,10 +2,10 @@ package org.haram.rothem.repository.dao;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.data.type.rothem.WeekStatus;
-import com.space.domain.rothem.entity.Calendar;
-import com.space.domain.rothem.entity.CalendarUniqueKey;
-import com.space.domain.rothem.repository.jpa.JpaCalendarRepository;
+import org.haram.rothem.data.type.WeekStatus;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.CalendarUniqueKey;
+import org.haram.rothem.repository.jpa.JpaCalendarRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QCalendar.calendar;
+import static org.haram.rothem.data.entity.QCalendar.calendar;
 
 @Component
 @RequiredArgsConstructor

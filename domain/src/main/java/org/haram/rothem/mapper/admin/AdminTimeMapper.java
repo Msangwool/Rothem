@@ -1,8 +1,10 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.response.TimeResponse;
-import com.space.domain.rothem.entity.Time;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.response.TimeResponse;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.data.dto.admin.response.TimeResponse;
+import org.haram.rothem.data.entity.Time;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;

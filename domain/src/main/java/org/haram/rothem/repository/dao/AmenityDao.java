@@ -2,10 +2,10 @@ package org.haram.rothem.repository.dao;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.domain.rothem.entity.Amenity;
-import com.space.domain.rothem.repository.jpa.JpaAmenityRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.haram.rothem.data.entity.Amenity;
+import org.haram.rothem.repository.jpa.JpaAmenityRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QAmenity.amenity;
+import static org.haram.rothem.data.entity.QAmenity.amenity;
 
 @Component
 @RequiredArgsConstructor

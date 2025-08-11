@@ -1,6 +1,6 @@
 package org.haram.rothem.repository.jpa;
 
-import com.space.domain.rothem.entity.RoomFile;
+import org.haram.rothem.data.entity.RoomFile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package org.haram.rothem.data.dto.admin.request;
 
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceIllegalArgumentException;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramIllegalArgumentException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.StringUtils;
@@ -16,11 +16,11 @@ public class AmenityRequest {
 
     public void validate() {
         if (!StringUtils.hasText(title)) {
-            throw new SpaceIllegalArgumentException("title is empty", RothemErrorCode.ILLEGAL_VALUE_TITLE);
+            throw new HaramIllegalArgumentException("title is empty", RothemErrorCode.ILLEGAL_VALUE_TITLE);
         }
 
         if (!StringUtils.hasText(filePath)) {
-            throw new SpaceIllegalArgumentException("filePath is empty", RothemErrorCode.ILLEGAL_VALUE_FILE_PATH);
+            throw new HaramIllegalArgumentException("filePath is empty", RothemErrorCode.ILLEGAL_VALUE_FILE_PATH);
         }
     }
 

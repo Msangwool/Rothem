@@ -4,10 +4,10 @@ import com.querydsl.core.QueryResults;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.data.type.rothem.ReservationStatus;
-import com.space.data.type.rothem.ReservationType;
-import com.space.domain.rothem.entity.Reservation;
-import com.space.domain.rothem.repository.jpa.JpaReservationRepository;
+import org.haram.rothem.data.type.ReservationStatus;
+import org.haram.rothem.data.type.ReservationType;
+import org.haram.rothem.data.entity.Reservation;
+import org.haram.rothem.repository.jpa.JpaReservationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -18,9 +18,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QCalendar.calendar;
-import static com.space.domain.rothem.entity.QReservation.reservation;
-import static com.space.domain.rothem.entity.QTimeStatus.timeStatus;
+import static org.haram.rothem.data.entity.QCalendar.calendar;
+import static org.haram.rothem.data.entity.QReservation.reservation;
+import static org.haram.rothem.data.entity.QTimeStatus.timeStatus;
 
 @Component
 @RequiredArgsConstructor

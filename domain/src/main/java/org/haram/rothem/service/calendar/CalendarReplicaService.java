@@ -1,13 +1,13 @@
 package org.haram.rothem.service.calendar;
 
-import com.space.data.type.rothem.WeekStatus;
-import com.space.domain.rothem.entity.Calendar;
-import com.space.domain.rothem.entity.CalendarUniqueKey;
-import com.space.domain.rothem.repository.dao.CalendarDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.CalendarUniqueKey;
+import org.haram.rothem.data.type.WeekStatus;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
+import org.haram.rothem.repository.dao.CalendarDao;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -50,7 +50,7 @@ public class CalendarReplicaService {
 
     public Calendar findById(Long calendarSeq) {
         return calendarDao.findById(calendarSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Calendar 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Calendar 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
     }
 
     public Optional<Calendar> findByCalendarUniqueKey(CalendarUniqueKey calendarUniqueKey) {

@@ -1,9 +1,12 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.request.PolicyRequest;
-import com.space.data.domain.rothem.admin.response.PolicyResponse;
-import com.space.domain.rothem.entity.Policy;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.request.PolicyRequest;
+import org.haram.rothem.data.dto.admin.response.PolicyResponse;
+import org.haram.rothem.data.entity.Policy;
+import org.haram.rothem.data.dto.admin.request.PolicyRequest;
+import org.haram.rothem.data.dto.admin.response.PolicyResponse;
+import org.haram.rothem.data.entity.Policy;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

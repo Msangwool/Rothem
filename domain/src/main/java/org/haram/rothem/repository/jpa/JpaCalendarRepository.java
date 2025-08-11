@@ -1,7 +1,7 @@
 package org.haram.rothem.repository.jpa;
 
-import com.space.data.type.rothem.WeekStatus;
-import com.space.domain.rothem.entity.Calendar;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.type.WeekStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

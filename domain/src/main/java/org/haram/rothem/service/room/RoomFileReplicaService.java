@@ -1,7 +1,7 @@
 package org.haram.rothem.service.room;
 
-import com.space.domain.rothem.entity.RoomFile;
-import com.space.domain.rothem.repository.dao.RoomFileDao;
+import org.haram.rothem.data.entity.RoomFile;
+import org.haram.rothem.repository.dao.RoomFileDao;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

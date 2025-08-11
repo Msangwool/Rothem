@@ -1,7 +1,7 @@
 package org.haram.rothem.repository.dao;
 
-import com.space.domain.rothem.entity.NoticeFile;
-import com.space.domain.rothem.repository.jpa.JpaNoticeFileRepository;
+import org.haram.rothem.data.entity.NoticeFile;
+import org.haram.rothem.repository.jpa.JpaNoticeFileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

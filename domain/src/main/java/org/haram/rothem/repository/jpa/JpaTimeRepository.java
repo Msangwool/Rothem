@@ -1,6 +1,6 @@
 package org.haram.rothem.repository.jpa;
 
-import com.space.domain.rothem.entity.Time;
+import org.haram.rothem.data.entity.Time;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

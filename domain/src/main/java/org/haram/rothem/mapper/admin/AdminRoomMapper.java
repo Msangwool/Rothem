@@ -1,11 +1,16 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.request.RoomRequest;
-import com.space.data.domain.rothem.admin.response.AmenityResponse;
-import com.space.data.domain.rothem.admin.response.RoomDetailResponse;
-import com.space.data.domain.rothem.admin.response.RoomResponse;
-import com.space.domain.rothem.entity.Room;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.request.RoomRequest;
+import org.haram.rothem.data.dto.admin.response.AmenityResponse;
+import org.haram.rothem.data.dto.admin.response.RoomDetailResponse;
+import org.haram.rothem.data.dto.admin.response.RoomResponse;
+import org.haram.rothem.data.entity.Room;
+import org.haram.rothem.data.dto.admin.request.RoomRequest;
+import org.haram.rothem.data.dto.admin.response.AmenityResponse;
+import org.haram.rothem.data.dto.admin.response.RoomDetailResponse;
+import org.haram.rothem.data.dto.admin.response.RoomResponse;
+import org.haram.rothem.data.entity.Room;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

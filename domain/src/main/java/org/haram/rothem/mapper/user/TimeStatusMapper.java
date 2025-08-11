@@ -1,8 +1,8 @@
 package org.haram.rothem.mapper.user;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.user.request.TimeStatusRequest;
-import com.space.domain.rothem.entity.TimeStatus;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.user.request.TimeStatusRequest;
+import org.haram.rothem.data.entity.TimeStatus;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

@@ -1,15 +1,15 @@
 package org.haram.rothem.service.room;
 
-import com.space.data.domain.rothem.admin.request.RoomSortRequest;
-import com.space.domain.rothem.entity.Room;
-import com.space.domain.rothem.entity.RoomAmenity;
-import com.space.domain.rothem.repository.dao.RoomAmenityDao;
-import com.space.domain.rothem.repository.dao.RoomDao;
-import com.space.exception.bodycode.BoardErrorCode;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityExistException;
-import com.space.exception.space.SpaceEntityNotFoundException;
-import com.space.exception.space.SpaceException;
+import org.haram.rothem.data.dto.admin.request.RoomSortRequest;
+import org.haram.rothem.data.entity.Room;
+import org.haram.rothem.data.entity.RoomAmenity;
+import org.haram.rothem.repository.dao.RoomAmenityDao;
+import org.haram.rothem.repository.dao.RoomDao;
+import org.haram.rothem.exception.bodycode.BoardErrorCode;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityExistException;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
+import org.haram.rothem.exception.exception.HaramException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -32,12 +32,12 @@ public class RoomMasterService {
 
     public Room save(Room room) {
         return roomDao.save(room)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Room 이 존재합니다.", RothemErrorCode.ALREADY_EXIST_ROOM));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Room 이 존재합니다.", RothemErrorCode.ALREADY_EXIST_ROOM));
     }
 
     public Room save(Room room, List<RoomAmenity> roomAmenities) {
         Room savedRoom = roomDao.save(room)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Room 이 존재합니다.", RothemErrorCode.ALREADY_EXIST_ROOM));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Room 이 존재합니다.", RothemErrorCode.ALREADY_EXIST_ROOM));
 
         if (roomAmenities != null) {
             for (RoomAmenity roomAmenity : roomAmenities) {
@@ -51,7 +51,7 @@ public class RoomMasterService {
 
     public Room modify(Room room, List<RoomAmenity> roomAmenities) {
         Room currentRoom = roomDao.findByRoomSeqAndStatusTrue(room.getRoomSeq())
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Room 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_ROOM));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Room 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_ROOM));
 
         Optional.ofNullable(room.getThumbnailPath()).ifPresent(currentRoom::setThumbnailPath);
         Optional.ofNullable(room.getRoomName()).ifPresent(currentRoom::setRoomName);
@@ -89,7 +89,7 @@ public class RoomMasterService {
         return currentRoom;
     }
 
-    public void delete(List<Long> roomSeqs) throws SpaceException {
+    public void delete(List<Long> roomSeqs) throws HaramException {
         try {
             List<Room> roomList = roomDao.findAllById(roomSeqs);
             for (Room room : roomList) {
@@ -99,7 +99,7 @@ public class RoomMasterService {
         } catch (Exception e) {
             log.error("[RoomMasterService] delete -> room 리스트 삭제 실패, roomSeq -> {}, class={}, message={}",
                     roomSeqs.toString(), e.getClass(), e.getMessage());
-            throw new SpaceException(BoardErrorCode.INVALID_VALUE);
+            throw new HaramException(BoardErrorCode.INVALID_VALUE);
         }
     }
 

@@ -1,8 +1,8 @@
 package org.haram.rothem.mapper.user;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.user.response.RoomFileResponse;
-import com.space.domain.rothem.entity.RoomFile;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.user.response.RoomFileResponse;
+import org.haram.rothem.data.entity.RoomFile;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;

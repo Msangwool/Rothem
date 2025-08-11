@@ -1,6 +1,6 @@
 package org.haram.rothem.data.dto.user.request;
 
-import com.space.data.type.rothem.ReservationType;
+import org.haram.rothem.data.type.ReservationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

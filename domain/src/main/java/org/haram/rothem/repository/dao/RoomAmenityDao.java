@@ -1,7 +1,7 @@
 package org.haram.rothem.repository.dao;
 
-import com.space.domain.rothem.entity.RoomAmenity;
-import com.space.domain.rothem.repository.jpa.JpaRoomAmenityRepository;
+import org.haram.rothem.data.entity.RoomAmenity;
+import org.haram.rothem.repository.jpa.JpaRoomAmenityRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

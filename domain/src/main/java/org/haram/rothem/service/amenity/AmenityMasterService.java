@@ -1,11 +1,11 @@
 package org.haram.rothem.service.amenity;
 
-import com.space.domain.rothem.entity.Amenity;
-import com.space.domain.rothem.repository.dao.AmenityDao;
-import com.space.domain.rothem.repository.dao.RoomAmenityDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityExistException;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.Amenity;
+import org.haram.rothem.repository.dao.AmenityDao;
+import org.haram.rothem.repository.dao.RoomAmenityDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityExistException;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,12 +25,12 @@ public class AmenityMasterService {
 
     public Amenity save(Amenity amenity) {
         return amenityDao.save(amenity)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Amenity 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_AMENITY));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Amenity 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_AMENITY));
     }
 
     public Amenity modify(Amenity amenity) {
         Amenity currentAmenity = amenityDao.findById(amenity.getAmenitySeq())
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Amenity 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_AMENITY));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Amenity 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_AMENITY));
 
         if (amenity.getFilePath() != null) {
             currentAmenity.setFilePath(amenity.getFilePath());

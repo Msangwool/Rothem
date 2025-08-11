@@ -1,12 +1,12 @@
 package org.haram.rothem.service.notice;
 
-import com.space.domain.rothem.entity.NoticeFile;
-import com.space.domain.rothem.entity.RothemNotice;
-import com.space.domain.rothem.repository.dao.NoticeDao;
-import com.space.domain.rothem.repository.dao.NoticeFileDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityExistException;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.NoticeFile;
+import org.haram.rothem.data.entity.RothemNotice;
+import org.haram.rothem.repository.dao.NoticeDao;
+import org.haram.rothem.repository.dao.NoticeFileDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityExistException;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,12 +25,12 @@ public class NoticeMasterService {
 
     public RothemNotice save(RothemNotice rothemNotice) {
         return noticeDao.save(rothemNotice)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Notice 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_NOTICE));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Notice 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_NOTICE));
     }
 
     public RothemNotice save(RothemNotice rothemNotice, List<NoticeFile> noticeFiles) {
         RothemNotice savedRothemNotice = noticeDao.save(rothemNotice)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Notice 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_NOTICE));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Notice 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_NOTICE));
 
         for (NoticeFile noticeFile : noticeFiles) {
             noticeFile.setNoticeSeq(savedRothemNotice.getNoticeSeq());
@@ -42,7 +42,7 @@ public class NoticeMasterService {
 
     public RothemNotice modify(RothemNotice rothemNotice) {
         RothemNotice currentRothemNotice = noticeDao.findById(rothemNotice.getNoticeSeq())
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Notice 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_NOTICE));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Notice 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_NOTICE));
 
         if (rothemNotice.getThumbnailPath() != null) {
             currentRothemNotice.setThumbnailPath(rothemNotice.getThumbnailPath());

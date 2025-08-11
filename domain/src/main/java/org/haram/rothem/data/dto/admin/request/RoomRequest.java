@@ -1,7 +1,7 @@
 package org.haram.rothem.data.dto.admin.request;
 
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceIllegalArgumentException;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramIllegalArgumentException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.StringUtils;
@@ -28,11 +28,11 @@ public class RoomRequest {
 
     public void validate() {
         if (!StringUtils.hasText(thumbnailPath)) {
-            throw new SpaceIllegalArgumentException("thumbnailPath is empty", RothemErrorCode.ILLEGAL_VALUE_FILE_PATH);
+            throw new HaramIllegalArgumentException("thumbnailPath is empty", RothemErrorCode.ILLEGAL_VALUE_FILE_PATH);
         }
 
         if (!StringUtils.hasText(roomName)) {
-            throw new SpaceIllegalArgumentException("roomName is empty", RothemErrorCode.ILLEGAL_VALUE_ROOM_NAME);
+            throw new HaramIllegalArgumentException("roomName is empty", RothemErrorCode.ILLEGAL_VALUE_ROOM_NAME);
         }
     }
 

@@ -1,7 +1,7 @@
 package org.haram.rothem.data.dto.user.request;
 
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceIllegalArgumentException;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramIllegalArgumentException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.StringUtils;
@@ -28,19 +28,19 @@ public class ReservationRequest {
 
     public void validate() {
         if (!StringUtils.hasText(userName)) {
-            throw new SpaceIllegalArgumentException("userName is empty", RothemErrorCode.ILLEGAL_VALUE_USERNAME);
+            throw new HaramIllegalArgumentException("userName is empty", RothemErrorCode.ILLEGAL_VALUE_USERNAME);
         }
 
         if (!StringUtils.hasText(phoneNum)) {
-            throw new SpaceIllegalArgumentException("phoneNum is empty", RothemErrorCode.ILLEGAL_VALUE_PHONE_NUM);
+            throw new HaramIllegalArgumentException("phoneNum is empty", RothemErrorCode.ILLEGAL_VALUE_PHONE_NUM);
         }
 
         if (calendarSeq == null) {
-            throw new SpaceIllegalArgumentException("calendarSeq is empty", RothemErrorCode.ILLEGAL_VALUE_CALENDAR_SEQ);
+            throw new HaramIllegalArgumentException("calendarSeq is empty", RothemErrorCode.ILLEGAL_VALUE_CALENDAR_SEQ);
         }
 
         if (timeRequests == null || timeRequests.isEmpty()) {
-            throw new SpaceIllegalArgumentException("timeRequests is empty", RothemErrorCode.ILLEGAL_VALUE_TIME_REQUEST);
+            throw new HaramIllegalArgumentException("timeRequests is empty", RothemErrorCode.ILLEGAL_VALUE_TIME_REQUEST);
         }
 
     }

@@ -1,13 +1,13 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.request.CalendarModifyRequest;
-import com.space.data.domain.rothem.admin.request.CalendarRequest;
-import com.space.data.domain.rothem.admin.response.CalendarResponse;
-import com.space.data.type.rothem.WeekStatus;
-import com.space.domain.rothem.entity.Calendar;
-import com.space.domain.rothem.entity.CalendarUniqueKey;
-import com.space.domain.rothem.util.CalendarUtil;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.request.CalendarModifyRequest;
+import org.haram.rothem.data.dto.admin.request.CalendarRequest;
+import org.haram.rothem.data.dto.admin.response.CalendarResponse;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.CalendarUniqueKey;
+import org.haram.rothem.data.type.WeekStatus;
+import org.haram.rothem.util.CalendarUtil;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

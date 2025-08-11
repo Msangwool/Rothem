@@ -1,9 +1,9 @@
 package org.haram.rothem.data.dto.admin.request;
 
-import com.space.data.type.rothem.ReservationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.haram.rothem.data.type.ReservationType;
 
 @Getter
 @Setter

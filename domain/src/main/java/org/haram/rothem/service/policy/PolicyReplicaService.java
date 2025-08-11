@@ -1,9 +1,9 @@
 package org.haram.rothem.service.policy;
 
-import com.space.domain.rothem.entity.Policy;
-import com.space.domain.rothem.repository.dao.PolicyDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.Policy;
+import org.haram.rothem.repository.dao.PolicyDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -35,7 +35,7 @@ public class PolicyReplicaService {
 
     public Policy findById(Long policySeq) {
         return policyDao.findById(policySeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Policy 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_POLICY));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Policy 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_POLICY));
     }
 
 }

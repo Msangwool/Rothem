@@ -1,8 +1,8 @@
 package org.haram.rothem.data.dto.admin.request;
 
-import com.space.data.type.rothem.ReservationStatus;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceIllegalArgumentException;
+import org.haram.rothem.data.type.ReservationStatus;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramIllegalArgumentException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +14,7 @@ public class ReservationStatusRequest {
 
     public void validate() {
         if (status == null) {
-            throw new SpaceIllegalArgumentException("status is empty", RothemErrorCode.ILLEGAL_VALUE_RESERVATION_STATUS);
+            throw new HaramIllegalArgumentException("status is empty", RothemErrorCode.ILLEGAL_VALUE_RESERVATION_STATUS);
         }
     }
 

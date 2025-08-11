@@ -1,7 +1,7 @@
 package org.haram.rothem.repository.dao;
 
-import com.space.domain.rothem.entity.ReservationPolicy;
-import com.space.domain.rothem.repository.jpa.JpaReservationPolicyRepository;
+import org.haram.rothem.data.entity.ReservationPolicy;
+import org.haram.rothem.repository.jpa.JpaReservationPolicyRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

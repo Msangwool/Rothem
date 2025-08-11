@@ -1,6 +1,6 @@
 package org.haram.rothem.data.dto.user.response;
 
-import com.space.data.type.rothem.ReservationStatus;
+import org.haram.rothem.data.type.ReservationStatus;
 import lombok.Getter;
 import lombok.Setter;
 

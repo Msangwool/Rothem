@@ -1,6 +1,6 @@
 package org.haram.rothem.data.dto.admin.request;
 
-import com.space.data.type.rothem.WeekStatus;
+import org.haram.rothem.data.type.WeekStatus;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.StringUtils;

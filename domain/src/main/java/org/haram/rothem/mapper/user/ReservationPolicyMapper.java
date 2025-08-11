@@ -1,8 +1,8 @@
 package org.haram.rothem.mapper.user;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.user.request.ReservationPolicyRequest;
-import com.space.domain.rothem.entity.ReservationPolicy;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.user.request.ReservationPolicyRequest;
+import org.haram.rothem.data.entity.ReservationPolicy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

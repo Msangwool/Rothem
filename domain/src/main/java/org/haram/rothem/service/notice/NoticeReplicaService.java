@@ -1,9 +1,9 @@
 package org.haram.rothem.service.notice;
 
-import com.space.domain.rothem.entity.RothemNotice;
-import com.space.domain.rothem.repository.dao.NoticeDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.RothemNotice;
+import org.haram.rothem.repository.dao.NoticeDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -35,7 +35,7 @@ public class NoticeReplicaService {
 
     public RothemNotice findById(Long noticeSeq) {
         return noticeDao.findById(noticeSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Notice 를 찾을 수 없습니다.", RothemErrorCode.NOT_FOUND_NOTICE));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Notice 를 찾을 수 없습니다.", RothemErrorCode.NOT_FOUND_NOTICE));
     }
 
 }

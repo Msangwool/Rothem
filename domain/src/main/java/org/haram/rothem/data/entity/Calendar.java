@@ -1,10 +1,10 @@
 package org.haram.rothem.data.entity;
 
-import com.space.data.type.rothem.WeekStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.haram.rothem.data.type.WeekStatus;
 
 @Getter
 @Entity

@@ -1,8 +1,8 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.request.RoomAmenityRequest;
-import com.space.domain.rothem.entity.RoomAmenity;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.request.RoomAmenityRequest;
+import org.haram.rothem.data.entity.RoomAmenity;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

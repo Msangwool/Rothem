@@ -2,9 +2,9 @@ package org.haram.rothem.repository.dao;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.domain.rothem.entity.Time;
-import com.space.domain.rothem.entity.TimeUniqueKey;
-import com.space.domain.rothem.repository.jpa.JpaTimeRepository;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.data.entity.TimeUniqueKey;
+import org.haram.rothem.repository.jpa.JpaTimeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QTime.time;
+import static org.haram.rothem.data.entity.QTime.time;
 
 @Component
 @RequiredArgsConstructor

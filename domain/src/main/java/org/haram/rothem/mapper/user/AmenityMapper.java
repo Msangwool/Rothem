@@ -1,8 +1,8 @@
 package org.haram.rothem.mapper.user;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.user.response.AmenityResponse;
-import com.space.domain.rothem.entity.Amenity;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.user.response.AmenityResponse;
+import org.haram.rothem.data.entity.Amenity;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;

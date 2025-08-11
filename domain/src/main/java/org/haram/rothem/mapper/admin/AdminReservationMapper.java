@@ -1,11 +1,18 @@
 package org.haram.rothem.mapper.admin;
 
-import com.space.common.config.CustomMapperConfig;
-import com.space.data.domain.rothem.admin.request.ReservationRequest;
-import com.space.data.domain.rothem.admin.response.*;
-import com.space.domain.rothem.entity.Calendar;
-import com.space.domain.rothem.entity.Reservation;
-import com.space.domain.rothem.entity.Time;
+import org.haram.rothem.data.CustomMapperConfig;
+import org.haram.rothem.data.dto.admin.request.ReservationRequest;
+import org.haram.rothem.data.dto.admin.response.*;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.Reservation;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.data.dto.admin.request.ReservationRequest;
+import org.haram.rothem.data.dto.admin.response.AvailableCalendarResponse;
+import org.haram.rothem.data.dto.admin.response.AvailableTimeResponse;
+import org.haram.rothem.data.dto.admin.response.ReservationResponse;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.Reservation;
+import org.haram.rothem.data.entity.Time;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

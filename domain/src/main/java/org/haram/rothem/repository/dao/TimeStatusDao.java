@@ -3,10 +3,10 @@ package org.haram.rothem.repository.dao;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.domain.rothem.entity.ReservationCalendarVO;
-import com.space.domain.rothem.entity.TimeStatus;
-import com.space.domain.rothem.entity.TimeStatusUniqueKey;
-import com.space.domain.rothem.repository.jpa.JpaTimeStatusRepository;
+import org.haram.rothem.data.entity.ReservationCalendarVO;
+import org.haram.rothem.data.entity.TimeStatus;
+import org.haram.rothem.data.entity.TimeStatusUniqueKey;
+import org.haram.rothem.repository.jpa.JpaTimeStatusRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QTimeStatus.timeStatus;
+import static org.haram.rothem.data.entity.QTimeStatus.timeStatus;
 
 @Component
 @RequiredArgsConstructor

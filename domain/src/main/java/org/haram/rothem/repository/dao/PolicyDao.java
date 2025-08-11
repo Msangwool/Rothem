@@ -2,8 +2,8 @@ package org.haram.rothem.repository.dao;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.space.domain.rothem.entity.Policy;
-import com.space.domain.rothem.repository.jpa.JpaPolicyRepository;
+import org.haram.rothem.data.entity.Policy;
+import org.haram.rothem.repository.jpa.JpaPolicyRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
-import static com.space.domain.rothem.entity.QPolicy.policy;
+import static org.haram.rothem.data.entity.QPolicy.policy;
 
 @Component
 @RequiredArgsConstructor

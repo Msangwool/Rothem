@@ -1,10 +1,10 @@
 package org.haram.rothem.service.policy;
 
-import com.space.domain.rothem.entity.Policy;
-import com.space.domain.rothem.repository.dao.PolicyDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityExistException;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.entity.Policy;
+import org.haram.rothem.repository.dao.PolicyDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityExistException;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,12 +22,12 @@ public class PolicyMasterService {
 
     public Policy save(Policy policy) {
         return policyDao.save(policy)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 Policy 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_POLICY));
+                .orElseThrow(() -> new HaramEntityExistException("이미 Policy 가 존재합니다.", RothemErrorCode.ALREADY_EXIST_POLICY));
     }
 
     public Policy modify(Policy policy) {
         Policy currentPolicy = policyDao.findById(policy.getPolicySeq())
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Policy 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_POLICY));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Policy 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_POLICY));
 
         currentPolicy.setTitle(policy.getTitle());
         currentPolicy.setContent(policy.getContent());

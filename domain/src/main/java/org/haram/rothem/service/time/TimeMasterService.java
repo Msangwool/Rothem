@@ -1,10 +1,10 @@
 package org.haram.rothem.service.time;
 
-import com.space.data.domain.rothem.admin.request.TimeAvailableRequest;
-import com.space.domain.rothem.entity.Time;
-import com.space.domain.rothem.repository.dao.TimeDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.dto.admin.request.TimeAvailableRequest;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.repository.dao.TimeDao;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class TimeMasterService {
 
     public void updateTimeStatus(TimeAvailableRequest timeStatusRequest) {
         Time currentTime = timeDao.findById(timeStatusRequest.getTimeSeq())
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Time 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Time 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME));
 
         currentTime.setIsAvailable(timeStatusRequest.getIsAvailable());
     }

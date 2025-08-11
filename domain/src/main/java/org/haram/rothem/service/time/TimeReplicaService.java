@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.haram.rothem.data.entity.Time;
 import org.haram.rothem.data.entity.TimeStatusUniqueKey;
 import org.haram.rothem.data.entity.TimeUniqueKey;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import org.haram.rothem.repository.dao.TimeDao;
 import org.haram.rothem.repository.dao.TimeStatusDao;
 import org.springframework.data.domain.Page;
@@ -38,7 +40,7 @@ public class TimeReplicaService {
 
     public Time findById(Long timeSeq) {
         return timeDao.findById(timeSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Time 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Time 이 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME));
     }
 
     public Optional<Time> findByTimeUniqueKey(TimeUniqueKey timeUniqueKey) {

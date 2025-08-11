@@ -1,11 +1,11 @@
 package org.haram.rothem.service.reservation;
 
-import com.space.data.domain.rothem.admin.response.ReservationDetailResponse;
-import com.space.data.type.rothem.ReservationStatus;
-import com.space.domain.rothem.entity.*;
-import com.space.domain.rothem.repository.dao.*;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityNotFoundException;
+import org.haram.rothem.data.dto.admin.response.ReservationDetailResponse;
+import org.haram.rothem.data.type.ReservationStatus;
+import org.haram.rothem.data.entity.*;
+import org.haram.rothem.repository.dao.*;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -32,12 +32,12 @@ public class ReservationReplicaService {
 
     public Reservation findByUserIdAndReservationStatus(String userId, ReservationStatus reservationStatus) {
         return reservationDao.findByUserIdAndReservationStatus(userId, reservationStatus)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
+                .orElseThrow(() -> new HaramEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
     }
 
     public Reservation findById(Long reservationSeq) {
         return reservationDao.findById(reservationSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
+                .orElseThrow(() -> new HaramEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
     }
 
     public List<Reservation> findAllByReservationStatus(ReservationStatus reservationStatus) {
@@ -89,7 +89,7 @@ public class ReservationReplicaService {
                 String.valueOf(date.getMonthValue()),
                 String.valueOf(date.getDayOfMonth()));
         Calendar calendar = calendarDao.findByCalendarUniqueKey(calendarUniqueKey)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("Calendar 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
+                .orElseThrow(() -> new HaramEntityNotFoundException("Calendar 가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
 
         Page<Reservation> reservationPage = reservationDao.findAllByDate(pageable, calendar.getCalendarSeq());
 
@@ -111,14 +111,14 @@ public class ReservationReplicaService {
 
     public ReservationDetailResponse findByReservationSeq(Long reservationSeq) {
         Reservation reservation = reservationDao.findById(reservationSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
+                .orElseThrow(() -> new HaramEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
 
         return getReservationDetailResponse(reservationSeq, reservation);
     }
 
     public ReservationDetailResponse findByReservationCode(String reservationCode) {
         Reservation reservation = reservationDao.findByReservationCode(reservationCode)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
+                .orElseThrow(() -> new HaramEntityNotFoundException("예약 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_RESERVATION));
 
         return getReservationDetailResponse(reservation.getReservationSeq(), reservation);
     }
@@ -127,7 +127,7 @@ public class ReservationReplicaService {
         List<TimeStatus> timeStatuses = timeStatusDao.findAllByReservationSeq(reservationSeq);
 
         if (timeStatuses.isEmpty()) {
-            throw new SpaceEntityNotFoundException("예약에 대한 시간 점보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME);
+            throw new HaramEntityNotFoundException("예약에 대한 시간 점보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME);
         }
 
         Long calendarSeq = timeStatuses.get(0).getCalendarSeq();
@@ -136,16 +136,16 @@ public class ReservationReplicaService {
         List<Long> timeSeqList = timeStatuses.stream().map(TimeStatus::getTimeSeq).toList();
 
         Room room = roomDao.findById(roomSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("스터디룸 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_ROOM));
+                .orElseThrow(() -> new HaramEntityNotFoundException("스터디룸 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_ROOM));
 
         Calendar calendar = calendarDao.findById(calendarSeq)
-                .orElseThrow(() -> new SpaceEntityNotFoundException("날짜 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
+                .orElseThrow(() -> new HaramEntityNotFoundException("날짜 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_CALENDAR));
 
         String calendarInfo = calendar.getYear() + "." + calendar.getMonth() + "." + calendar.getDate();
 
         List<Time> timeList = timeDao.findAllByTimeSeqList(timeSeqList);
         if (timeList.isEmpty()) {
-            throw new SpaceEntityNotFoundException("시간 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME);
+            throw new HaramEntityNotFoundException("시간 정보가 존재하지 않습니다.", RothemErrorCode.NOT_FOUND_TIME);
         }
 
         StringBuilder timeInfo = new StringBuilder();

@@ -1,7 +1,7 @@
 package org.haram.rothem.service.notice;
 
-import com.space.domain.rothem.entity.NoticeFile;
-import com.space.domain.rothem.repository.dao.NoticeFileDao;
+import org.haram.rothem.data.entity.NoticeFile;
+import org.haram.rothem.repository.dao.NoticeFileDao;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

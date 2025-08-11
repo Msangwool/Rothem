@@ -1,13 +1,13 @@
 package org.haram.rothem.service.time;
 
-import com.space.data.domain.rothem.admin.response.UnavailableTimeResponse;
-import com.space.data.domain.rothem.admin.response.UnavailableTimeStatus;
-import com.space.domain.rothem.entity.ReservationCalendarVO;
-import com.space.domain.rothem.entity.Time;
-import com.space.domain.rothem.entity.TimeStatus;
-import com.space.domain.rothem.entity.TimeStatusUniqueKey;
-import com.space.domain.rothem.repository.dao.TimeDao;
-import com.space.domain.rothem.repository.dao.TimeStatusDao;
+import org.haram.rothem.data.dto.admin.response.UnavailableTimeStatus;
+import org.haram.rothem.data.entity.ReservationCalendarVO;
+import org.haram.rothem.data.dto.admin.response.UnavailableTimeResponse;
+import org.haram.rothem.data.entity.Time;
+import org.haram.rothem.data.entity.TimeStatus;
+import org.haram.rothem.data.entity.TimeStatusUniqueKey;
+import org.haram.rothem.repository.dao.TimeDao;
+import org.haram.rothem.repository.dao.TimeStatusDao;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

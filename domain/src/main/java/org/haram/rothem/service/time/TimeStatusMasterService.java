@@ -1,15 +1,15 @@
 package org.haram.rothem.service.time;
 
-import com.space.data.domain.rothem.admin.request.TimeStatusRequest;
-import com.space.data.type.rothem.ReservationType;
-import com.space.domain.rothem.entity.TimeStatus;
-import com.space.domain.rothem.entity.TimeStatusUniqueKey;
-import com.space.domain.rothem.mapper.admin.AdminTimeStatusMapper;
-import com.space.domain.rothem.repository.dao.TimeStatusDao;
-import com.space.exception.bodycode.RothemErrorCode;
-import com.space.exception.space.SpaceEntityExistException;
+import org.haram.rothem.data.type.ReservationType;
+import org.haram.rothem.exception.bodycode.RothemErrorCode;
+import org.haram.rothem.exception.exception.HaramEntityExistException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.haram.rothem.data.dto.admin.request.TimeStatusRequest;
+import org.haram.rothem.data.entity.TimeStatus;
+import org.haram.rothem.data.entity.TimeStatusUniqueKey;
+import org.haram.rothem.mapper.admin.AdminTimeStatusMapper;
+import org.haram.rothem.repository.dao.TimeStatusDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,7 +29,7 @@ public class TimeStatusMasterService {
     public void save(TimeStatus timeStatus) {
         timeStatus.setReservationSeq(-1L);
         timeStatusDao.save(timeStatus)
-                .orElseThrow(() -> new SpaceEntityExistException("이미 존재하는 TimeStatus 입니다.", RothemErrorCode.ALREADY_EXIST_TIME_STATUS));
+                .orElseThrow(() -> new HaramEntityExistException("이미 존재하는 TimeStatus 입니다.", RothemErrorCode.ALREADY_EXIST_TIME_STATUS));
     }
 
     public void saveAll(List<TimeStatus> timeStatusList) {

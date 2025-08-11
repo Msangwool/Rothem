@@ -1,7 +1,7 @@
 package org.haram.rothem.repository.jpa;
 
-import com.space.data.type.rothem.ReservationStatus;
-import com.space.domain.rothem.entity.Reservation;
+import org.haram.rothem.data.entity.Reservation;
+import org.haram.rothem.data.type.ReservationStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

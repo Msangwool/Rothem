@@ -1,8 +1,8 @@
 package org.haram.rothem.util;
 
-import com.space.domain.rothem.entity.Calendar;
-import com.space.domain.rothem.entity.CalendarUniqueKey;
 import lombok.experimental.UtilityClass;
+import org.haram.rothem.data.entity.Calendar;
+import org.haram.rothem.data.entity.CalendarUniqueKey;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
