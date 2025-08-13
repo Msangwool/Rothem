@@ -3,7 +3,6 @@ package org.haram.rothem.data.dto.user.response;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.haram.rothem.data.dto.notice.NoticeResponse;
 
 import java.util.List;
 
@@ -11,8 +10,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor(staticName = "of")
 public class MainInfoResponse {
-
-    private List<NoticeResponse> noticeResponses;
 
     private List<RoomResponse> roomResponses;
 

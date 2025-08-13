@@ -27,6 +27,10 @@ public class ReservationRequest {
     private List<TimeRequest> timeRequests;
 
     public void validate() {
+        if (!StringUtils.hasText(userId)) {
+            throw new HaramIllegalArgumentException("userId is empty", RothemErrorCode.ILLEGAL_VALUE_USERNAME);
+        }
+
         if (!StringUtils.hasText(userName)) {
             throw new HaramIllegalArgumentException("userName is empty", RothemErrorCode.ILLEGAL_VALUE_USERNAME);
         }
